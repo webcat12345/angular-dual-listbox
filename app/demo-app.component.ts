@@ -9,7 +9,7 @@ import { DualListComponent } from 'angular-dual-listbox';
 <div class="container-fluid">
 	<p></p>
 	<dual-list [sort]="keepSorted" [source]="source" [key]="key" [display]="display" [filter]="filter"
-		[(destination)]="confirmed" height="265px" [format]="format"></dual-list>
+		[(destination)]="confirmed" height="265px" [format]="format" (editItem)="onEdit($event)"></dual-list>
 
 	<ul class="nav nav-tabs" style="margin-top:50px;">
 		<li [class.active]="tab===1"><a (click)="tab=1">Arrays</a><li>
@@ -317,6 +317,10 @@ export class DemoAppComponent implements OnInit {
 	swapDirection() {
 		this.sourceLeft = !this.sourceLeft;
 		this.format.direction = this.sourceLeft ? DualListComponent.LTR : DualListComponent.RTL;
+	}
+
+    onEdit(item: any) {
+		console.log(item);
 	}
 
 }

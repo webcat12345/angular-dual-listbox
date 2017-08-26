@@ -109,6 +109,12 @@ div.record-picker::-webkit-scrollbar-thumb:hover {
 	background-color:lightgray;
 }
 
+.record-picker ul li a {
+	position: absolute;
+	right: 30px;
+	padding-top: 5px;
+}
+
 .dual-list  {
 	display: -webkit-box;
 	display: flex;

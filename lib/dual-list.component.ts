@@ -30,6 +30,7 @@ export class DualListComponent implements DoCheck, OnChanges {
 	@Input() source:Array<any>;
 	@Input() destination:Array<any>;
 	@Output() destinationChange = new EventEmitter();
+	@Output() editItem = new EventEmitter();
 
 	available:BasicList;
 	confirmed:BasicList;
@@ -441,6 +442,10 @@ export class DualListComponent implements DoCheck, OnChanges {
 			return true;
 		}
 		return false;
+	}
+
+	onEditItem(item: any) {
+        this.editItem.emit(item);
 	}
 
 	private unpick(source:BasicList) {

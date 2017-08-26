@@ -15,7 +15,7 @@
 					(click)="selectItem(available.pick, item); shiftClick($event, idx, available, item)"
 					[ngClass]="{selected: isItemSelected(available.pick, item)}"
 					draggable="true" (dragstart)="drag($event, item, available)" (dragend)="dragEnd(available)"
-				><label>{{item._name}}</label></li>
+				><label>{{item._name}}</label><a class="edit-item" (click)="onEditItem(item)">Edit</a></li>
 			</ul>
 		</div>
 
