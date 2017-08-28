@@ -1,0 +1,1 @@
+[{"__symbolic":"module","version":3,"metadata":{},"exports":[{"from":"./basic-list"},{"from":"./dual-list.component"},{"from":"./angular-dual-listbox.module"}]},{"__symbolic":"module","version":1,"metadata":{},"exports":[{"from":"./basic-list"},{"from":"./dual-list.component"},{"from":"./angular-dual-listbox.module"}]}]
