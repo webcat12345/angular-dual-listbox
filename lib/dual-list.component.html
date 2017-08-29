@@ -43,7 +43,7 @@
 					(click)="selectItem(confirmed.pick, item); shiftClick($event, idx, confirmed, item)"
 					[ngClass]="{selected: isItemSelected(confirmed.pick, item)}"
 					draggable="true" (dragstart)="drag($event, item, confirmed)" (dragend)="dragEnd(confirmed)"
-				><label>{{item._name}}</label></li>
+				><label>{{item._name}}</label><a class="edit-item" (click)="onEditItem(item)">Edit</a></li>
 			</ul>
 		</div>
 
