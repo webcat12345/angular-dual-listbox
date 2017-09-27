@@ -23,6 +23,8 @@ export declare class DualListComponent implements DoCheck, OnChanges {
     compare: compareFunction;
     source: Array<any>;
     destination: Array<any>;
+    editRight: boolean;
+    editLeft: boolean;
     destinationChange: EventEmitter<{}>;
     editItem: EventEmitter<{}>;
     available: BasicList;
