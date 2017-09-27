@@ -29,6 +29,8 @@ export class DualListComponent implements DoCheck, OnChanges {
 	@Input() compare:compareFunction = typeof this.compare !== 'undefined' ? this.compare : undefined;
 	@Input() source:Array<any>;
 	@Input() destination:Array<any>;
+	@Input() editRight: boolean;
+	@Input() editLeft: boolean;
 	@Output() destinationChange = new EventEmitter();
 	@Output() editItem = new EventEmitter();
 
