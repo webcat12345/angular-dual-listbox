@@ -123,7 +123,8 @@ export class DualListComponent implements DoCheck, OnChanges {
 			sourceChanges.forEachAddedItem((r:any) => {
 				// Do not add duplicates even if source has duplicates.
 				if (this.findItemIndex(this.available.list, r.item, this.key) === -1) {
-					this.available.list.push( { _id: this.makeId(r.item), _name: this.makeName(r.item) });
+					this.available.list.push( { _id: this.makeId(r.item), _name: this.makeName(r.item), target: r.item});
+					console.log(this.available);
 				}
 			});
 
