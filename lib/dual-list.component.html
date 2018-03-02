@@ -13,9 +13,10 @@
 				(drop)="drop($event, confirmed)" (dragover)="allowDrop($event, available)" (dragleave)="dragLeave()">
 				<li *ngFor="let item of available.sift; let idx=index;"
 					(click)="selectItem(available.pick, item); shiftClick($event, idx, available, item)"
+					[class.tooltip]="tooltipProperty"
 					[ngClass]="{selected: isItemSelected(available.pick, item)}"
 					draggable="true" (dragstart)="drag($event, item, available)" (dragend)="dragEnd(available)">
-					<label [class.tooltip]="tooltipProperty">
+					<label>
 						{{item._name}}
 						<span class="tooltiptext" *ngIf="tooltipProperty">{{item.target[tooltipProperty] || 'No description'}}</span>
 					</label>
@@ -45,10 +46,11 @@
 			<ul [ngStyle]="{'max-height': height, 'min-height': height}" [ngClass]="{over:confirmed.dragOver}"
 				(drop)="drop($event, available)" (dragover)="allowDrop($event, confirmed)" (dragleave)="dragLeave()">
 				<li *ngFor="let item of confirmed.sift; let idx=index;"
+                    [class.tooltip]="tooltipProperty"
 					(click)="selectItem(confirmed.pick, item); shiftClick($event, idx, confirmed, item)"
 					[ngClass]="{selected: isItemSelected(confirmed.pick, item)}"
 					draggable="true" (dragstart)="drag($event, item, confirmed)" (dragend)="dragEnd(confirmed)">
-					<label [class.tooltip]="tooltipProperty">
+					<label>
 						{{item._name}}
 						<span class="tooltiptext" *ngIf="tooltipProperty">{{item.target[tooltipProperty] || 'No description'}}</span>
 					</label>
