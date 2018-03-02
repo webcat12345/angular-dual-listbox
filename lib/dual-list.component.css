@@ -185,7 +185,7 @@ button.btn-block {
     padding: 5px 0;
     position: absolute;
     z-index: 1;
-    top: 150%;
+    bottom: 100%;
     left: 0;
     margin-left: 0px;
 }
