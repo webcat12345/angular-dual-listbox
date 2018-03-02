@@ -8,7 +8,7 @@ import { DualListComponent } from 'angular-dual-listbox';
 	template: `
 <div class="container-fluid">
 	<p></p>
-	<dual-list [sort]="keepSorted" [source]="source" [key]="key" [display]="display" [filter]="filter"
+	<dual-list [sort]="keepSorted" [source]="source" [key]="key" [display]="display" [filter]="filter" tooltipProperty="station"
 		[(destination)]="confirmed" height="265px" [format]="format" (editItem)="onEdit($event)"></dual-list>
 
 	<ul class="nav nav-tabs" style="margin-top:50px;">

@@ -31,6 +31,7 @@ export class DualListComponent implements DoCheck, OnChanges {
 	@Input() destination:Array<any>;
 	@Input() editRight: boolean;
 	@Input() editLeft: boolean;
+	@Input() tooltipProperty: string;
 	@Output() destinationChange = new EventEmitter();
 	@Output() editItem = new EventEmitter();
 

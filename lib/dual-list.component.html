@@ -14,8 +14,13 @@
 				<li *ngFor="let item of available.sift; let idx=index;"
 					(click)="selectItem(available.pick, item); shiftClick($event, idx, available, item)"
 					[ngClass]="{selected: isItemSelected(available.pick, item)}"
-					draggable="true" (dragstart)="drag($event, item, available)" (dragend)="dragEnd(available)"
-				><label>{{item._name}}</label><a class="edit-item" (click)="onEditItem(item)" *ngIf="editLeft">Edit</a></li>
+					draggable="true" (dragstart)="drag($event, item, available)" (dragend)="dragEnd(available)">
+					<label [class.tooltip]="tooltipProperty">
+						{{item._name}}
+						<span class="tooltiptext">{{item[tooltipProperty] || 'No description'}}</span>
+					</label>
+					<a class="edit-item" (click)="onEditItem(item)" *ngIf="editLeft">Edit</a>
+				</li>
 			</ul>
 		</div>
 
@@ -42,8 +47,13 @@
 				<li *ngFor="let item of confirmed.sift; let idx=index;"
 					(click)="selectItem(confirmed.pick, item); shiftClick($event, idx, confirmed, item)"
 					[ngClass]="{selected: isItemSelected(confirmed.pick, item)}"
-					draggable="true" (dragstart)="drag($event, item, confirmed)" (dragend)="dragEnd(confirmed)"
-				><label>{{item._name}}</label><a class="edit-item" (click)="onEditItem(item)" *ngIf="editRight">Edit</a></li>
+					draggable="true" (dragstart)="drag($event, item, confirmed)" (dragend)="dragEnd(confirmed)">
+					<label [class.tooltip]="tooltipProperty">
+						{{item._name}}changed
+						<span class="tooltiptext">{{item[tooltipProperty] || 'No description'}}</span>
+					</label>
+					<a class="edit-item" (click)="onEditItem(item)" *ngIf="editRight">Edit</a>
+				</li>
 			</ul>
 		</div>
 
